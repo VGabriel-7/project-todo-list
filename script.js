@@ -2,6 +2,7 @@ const btnTarefas = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
 const ol = document.querySelector('#lista-tarefas');
 const btnApagaTudo = document.getElementById('apaga-tudo');
+const btnRmFinalizados = document.getElementById('remover-finalizados');
 
 // Adiciona uma tarefa na lista de tarefas.
 btnTarefas.addEventListener('click', () => {
@@ -45,5 +46,16 @@ btnApagaTudo.addEventListener('click', () => {
     }
   } else {
     alert('A lista está vazia');
+  }
+});
+
+btnRmFinalizados.addEventListener('click', () => {
+  const filhosOl = document.querySelectorAll('#lista-tarefas li');
+  for (let index = 0; index < filhosOl.length; index += 1) {
+    const completado = filhosOl[index];
+    console.log(completado);
+    if (completado.className === 'completed') {
+      completado.remove();
+    }
   }
 });
