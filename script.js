@@ -1,6 +1,7 @@
 const btnTarefas = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
 const ol = document.querySelector('#lista-tarefas');
+const btnApagaTudo = document.getElementById('apaga-tudo');
 
 // Adiciona uma tarefa na lista de tarefas.
 btnTarefas.addEventListener('click', () => {
@@ -33,5 +34,16 @@ ol.addEventListener('dblclick', (event) => {
   } else {
     tarefa.style.backgroundColor = null;
     tarefa.className = 'completed';
+  }
+});
+
+btnApagaTudo.addEventListener('click', () => {
+  const filhosOl = document.querySelectorAll('#lista-tarefas li');
+  if (filhosOl.length > 0) {
+    for (let index = 0; index < filhosOl.length; index += 1) {
+      filhosOl[index].remove();
+    }
+  } else {
+    alert('A lista está vazia');
   }
 });
