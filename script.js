@@ -3,6 +3,19 @@ const input = document.getElementById('texto-tarefa');
 const ol = document.querySelector('#lista-tarefas');
 const btnApagaTudo = document.getElementById('apaga-tudo');
 const btnRmFinalizados = document.getElementById('remover-finalizados');
+const btnSalvarTf = document.getElementById('salvar-tarefas');
+
+// function tarefasSalvas() {
+//   if (localStorage.length > 0) {
+//     const local = localStorage;
+//     for (let index = 0; index < local.length; index += 1) {
+//       const element = local[index];
+//       ol.a
+//     }
+//   }
+// }
+
+// tarefasSalvas();
 
 // Adiciona uma tarefa na lista de tarefas.
 btnTarefas.addEventListener('click', () => {
@@ -59,3 +72,14 @@ btnRmFinalizados.addEventListener('click', () => {
     }
   }
 });
+
+// btnSalvarTf.addEventListener('click', () => {
+//   const filhosOl = document.querySelector('#lista-tarefas').childNodes;
+//   for (let index = 0; index < filhosOl.length; index += 1) {
+//     localStorage.setItem(index, filhosOl[index]);
+//   }
+// });
+// localStorage.removeItem('');
+// console.log(localStorage);
+// // if (localStorage.length < 1) {
+// // }
